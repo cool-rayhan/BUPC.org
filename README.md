@@ -1,2 +1,2 @@
-# BUPC.org
-web project for bupc
+# BUPC
+A web project for bupc.
