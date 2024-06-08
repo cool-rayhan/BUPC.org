@@ -751,72 +751,94 @@
     </div>
   </section>
   <br><br><br>
-  <!-- end blog section -->
+	
+  <!-- Advisory Panel -->
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .advisor-panel {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            background: #D7D2B7;
-            padding: 20px;
-            border: 5px solid #DECA16;
+            background: #fff;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         .advisor-panel h2 {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #2c3e50;
         }
         .advisor-panel p {
-            margin-bottom: 20px;
-            font-size: 17px;
-            color: #35417E;
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #7f8c8d;
         }
-        .slider {
+        .advisor-slider {
             position: relative;
             width: 100%;
             overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        .slides {
+        .advisor-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-        .slide {
+        .advisor-slide {
             min-width: 100%;
             box-sizing: border-box;
             padding: 20px;
+            background: #D7D2B7;
+            border-radius: 20px;
         }
-        .slide img {
+        .advisor-slide img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid black;
+            border: 3px solid #141414;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             object-fit: cover;
         }
-        .slide-info {
+        .advisor-slide-info {
             margin-top: 10px;
+            text-align: center;
         }
-        .slide-info h3 {
+        .advisor-slide-info h3 {
             margin: 10px 0 5px;
+            font-size: 22px;
+            color: #34495e;
         }
-        .slide-info p {
+        .advisor-slide-info p {
             margin: 5px 0;
+            font-size: 16px;
+            color: #7f8c8d;
         }
         .arrow {
             cursor: pointer;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(44, 62, 80, 0.8);
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 50%;
+            padding: 15px;
+            border-radius: 30%;
+            font-size: 18px;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
         .arrow-left {
             left: 10px;
@@ -824,78 +846,87 @@
         .arrow-right {
             right: 10px;
         }
+        .arrow:hover {
+            background: rgba(9, 13, 16, 1);
+        }
     </style>
 </head>
 <body>
     <div class="advisor-panel">
         <h2>Our Advisor Panel</h2>
         <p>The Barishal University Physics Club is proud to have a diverse and esteemed Advisor Panel comprising faculty members from various departments. Their collective expertise, guidance, and support play a crucial role in shaping our club’s activities and initiatives. These advisors bring a wealth of knowledge and experience from different fields, fostering interdisciplinary collaboration and enriching our understanding of physics. Their dedication helps us create a vibrant, inclusive, and intellectually stimulating environment for all our members. Together, we strive to explore the frontiers of science and inspire the next generation of physicists.</p>
-          <br>
-        <div class="slider">
-            <button class="arrow arrow-left" onclick="prevSlide()">❮</button>
-            <div class="slides">
+        <br>
+        <div class="advisor-slider">
+            <button class="arrow arrow-left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+            <div class="advisor-slides">
                 <!-- Slide 1 -->
-                <div class="slide">
+                <div class="advisor-slide">
                     <img src="https://cool-rayhan.github.io/BUPC/khorshed sir.png" alt="Advisor 1">
-                    <div class="slide-info">
-                        <h3>Dr. Md. Khorshed Alam(Cheif Advisor)</h3>
+                    <div class="advisor-slide-info">
+                        <h3>Dr. Md. Khorshed Alam (Chief Advisor)</h3>
                         <p>Associate Professor & Chairman</p>
                         <p>Department of Physics</p>
                     </div>
                 </div>
                 <!-- Slide 2 -->
-                <div class="slide">
+                <div class="advisor-slide">
                     <img src="https://cool-rayhan.github.io/BUPC/dean.png" alt="Advisor 2">
-                    <div class="slide-info">
+                    <div class="advisor-slide-info">
                         <h3>Dr. Md. Shafiul Alam</h3>
-                        <p>Dean- Science & Engineering</p>
+                        <p>Dean - Science & Engineering</p>
                         <p>Associate Professor</p>
                         <p>Department of Mathematics</p>
                     </div>
                 </div>
-		     <div class="slide">
+                 <!-- Slide 3 -->
+                <div class="advisor-slide">
                     <img src="https://cool-rayhan.github.io/BUPC.org/Rahima Nasrin.jpg" alt="Advisor 3">
-                    <div class="slide-info">
+                    <div class="advisor-slide-info">
                         <h3>Dr. Rahima Nasrin</h3>
-                        <p>Associate Professor</p>
-                        <p>Department of Physics </p>
-                    </div>
-                </div>
-		     <div class="slide">
-                    <img src="https://cool-rayhan.github.io/BUPC.org/Lokman Hossen.jpg" alt="Advisor 4">
-                    <div class="slide-info">
-                        <h3>Md Lokman Hossen, PhD (USA)</h3>                        
                         <p>Associate Professor</p>
                         <p>Department of Physics</p>
                     </div>
                 </div>
-		     <div class="slide">
-                    <img src="https://cool-rayhan.github.io/BUPC.org/Halima Bagum.jpeg" alt="Advisor 5">
-                    <div class="slide-info">
-                        <h3>Dr.Halima Bagum</h3>
-                        <p>Associate Professor & Chairman</p>
-                        <p>Department of Chemistry </p>
+                <!-- Slide 4 -->
+                <div class="advisor-slide">
+                    <img src="https://cool-rayhan.github.io/BUPC.org/Lokman Hossen.jpg" alt="Advisor 4">
+                    <div class="advisor-slide-info">
+                        <h3>Md Lokman Hossen, PhD (USA)</h3>
+                        <p>Associate Professor</p>
+                        <p>Department of Physics</p>
                     </div>
                 </div>
-		     <div class="slide">
+                <!-- Slide 5 -->
+                <div class="advisor-slide">
+                    <img src="https://cool-rayhan.github.io/BUPC.org/Halima Bagum.jpeg" alt="Advisor 5">
+                    <div class="advisor-slide-info">
+                        <h3>Dr. Halima Bagum</h3>
+                        <p>Associate Professor & Chairman</p>
+                        <p>Department of Chemistry</p>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="advisor-slide">
                     <img src="https://cool-rayhan.github.io/BUPC.org/Dhiman Kumer Roy.jpg" alt="Advisor 6">
-                    <div class="slide-info">
+                    <div class="advisor-slide-info">
                         <h3>Dr. Dhiman Kumer Roy</h3>
                         <p>Associate Professor & Chairman</p>
-                        <p>DEPARTMENT OF GEOLOGY AND MINING</p>
+                        <p>Department of Geology and Mining</p>
                     </div>
                 </div>
-		     <div class="slide">
+                <!-- Slide 7 -->
+                <div class="advisor-slide">
                     <img src="" alt="Advisor 7">
-                    <div class="slide-info">
+                    <div class="advisor-slide-info">
                         <h3>Dr. Muhammad Shakhawat Hossain</h3>
                         <p>Associate Professor & Chairman</p>
                         <p>Department of Mathematics</p>
                     </div>
                 </div>
-		     <div class="slide">
+                <!-- Slide 8 -->
+                <div class="advisor-slide">
                     <img src="https://cool-rayhan.github.io/BUPC.org/Bijan Krishna Saha.jpg" alt="Advisor 8">
-                    <div class="slide-info">
+                    <div class="advisor-slide-info">
                         <h3>Dr. Bijan Krishna Saha</h3>
                         <p>Associate Professor</p>
                         <p>Department of Mathematics</p>
@@ -904,14 +935,14 @@
 
                 <!-- Add more slides as needed -->
             </div>
-            <button class="arrow arrow-right" onclick="nextSlide()">❯</button>
+            <button class="arrow arrow-right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
     <script>
         let currentSlide = 0;
-        const slides = document.querySelector('.slides');
-        const slideCount = document.querySelectorAll('.slide').length;
+        const slides = document.querySelector('.advisor-slides');
+        const slideCount = document.querySelectorAll('.advisor-slide').length;
 
         function showSlide(index) {
             const offset = -index * 100;
@@ -933,7 +964,6 @@
     </script>
 </body>
 </html>
-
 
 
 
@@ -1067,7 +1097,7 @@
     </div>
 </body>
 </html>
-
+<!-- Personal Data -->
    <br><br><br>
           <!DOCTYPE html>
 <html lang="en">
@@ -1133,7 +1163,7 @@
             <p><strong>Discipline:</strong> Physics</p>
             <p><strong>Batch:</strong> 8th(BU)</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Material sc., Electroporation, Electronics, Computational Physics, Plasma Physics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership, Mentorship, Problem Solving, Electrodynamics, Paricle Physics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, Electrodynamics, Particle Physics</p>
         </div>
     </div>
 
@@ -1148,8 +1178,8 @@
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
             <p><strong>Batch:</strong> 8th(BU)</p>
-            <p><strong>Interested-in:</strong>  Semiconductor, Electroporation, Quantum Physics, Cosmology, Renewable Energy</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership ,Mentorship, Quantum Phycics, Nano Science</p>
+            <p><strong>Interested-in:</strong>  Semiconductor, Electroporation, Photonics, Magnetism, Vector Analysis, Optics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Photonics, Magnetism, Vector Analysis, Optics</p>
         </div>
     </div>
 
@@ -1165,7 +1195,7 @@
             <p><strong>Discipline:</strong> Physics</p>
             <p><strong>Batch:</strong> 8th(BU)</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation, Electrodynamics, thermodynamics, Astro-physics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership, Mentorship, Dance, CR, Composite Material, Art, Debate</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Composite Material, Optics, Electronics</p>
         </div>
     </div>
 
