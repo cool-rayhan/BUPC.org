@@ -1,3 +1,198 @@
+<!--menu bar-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUPC Top Bar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* Top bar styling */
+        #bupc-top-bar {
+            position: fixed;
+            top: -20px; /* Start hidden above the viewport */
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #FAD932;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            transition: top 0.3s ease-in-out;
+            z-index: 1000;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Logo styling */
+        .bupc-logo img {
+            height: 60px;
+
+        }
+
+        /* Menu button styling */
+        .bupc-menu-button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bupc-menu-button svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .bupc-menu-button.open svg {
+            transform: rotate(45deg);
+        }
+
+        .bupc-menu-button.open svg line:nth-child(2) {
+            opacity: 0;
+        }
+
+        /* Join button styling */
+        .bupc-join a {
+            font-family: Roboto;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333333;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .bupc-join a:hover {
+            background-color: #FFEE00;
+        }
+
+        /* Menu overlay styling */
+        #bupc-nav {
+            height: 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.9);
+            overflow: hidden;
+            transition: height 0.5s ease-in-out;
+            z-index: 999;
+        }
+
+        #bupc-nav .bupc-overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-height: 80%;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        #bupc-nav .bupc-overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 5px 0;
+            border: 1px solid white;
+        }
+
+        #bupc-nav .bupc-overlay-content a:hover {
+            color: #f1f1f1;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div id="bupc-top-bar">
+        <div class="bupc-menu-button" id="bupc-menu-button">
+            <svg viewBox="0 0 100 80" width="40" height="40">
+                <line x1="10" y1="20" x2="90" y2="20" stroke="white" stroke-width="10"></line>
+                <line x1="10" y1="40" x2="90" y2="40" stroke="white" stroke-width="10"></line>
+                <line x1="10" y1="60" x2="90" y2="60" stroke="white" stroke-width="10"></line>
+            </svg>
+        </div>
+        <div class="bupc-logo">
+            <img src="https://cool-rayhan.github.io/BUPC/an 2.gif" alt="BUPC Logo">
+        </div>
+        <div class="bupc-join">
+            <a href="#join">Join BUPC</a>
+        </div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div id="bupc-nav">
+        <div class="bupc-overlay-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+            <a href="#mission">Mission</a>
+            <a href="#vision">Vision</a>
+            <a href="#admin">Admin</a>
+            <a href="#notice">Notice</a>
+            <a href="#developer">Contact Developer</a>
+        </div>
+    </div>
+
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('bupc-menu-button');
+            var overlay = document.getElementById('bupc-nav');
+
+            menuButton.addEventListener('click', function() {
+                if (overlay.style.height === '100%') {
+                    overlay.style.height = '0%';
+                    menuButton.classList.remove('open');
+                } else {
+                    overlay.style.height = '100%';
+                    menuButton.classList.add('open');
+                }
+            });
+        });
+
+        // JavaScript to show/hide the top bar on scroll
+        window.addEventListener('scroll', function() {
+            var bupcTopBar = document.getElementById('bupc-top-bar');
+            var scrollPosition = window.scrollY;
+            if (scrollPosition > 500) {
+                bupcTopBar.style.top = '0'; // Show the top bar
+            } else {
+                bupcTopBar.style.top = '-60px'; // Hide the top bar
+            }
+        });
+    </script>
+</body>
+</html>
+<!--main html start-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +252,7 @@
         }
 
         footer {
-            background: #F08C00;
+            background: #FAD932;
             text-align: center;
             padding: 10px; /* Reduced padding for smaller screens */
             color: #DBDBDB;
@@ -932,6 +1127,15 @@
                         <p>Department of Mathematics</p>
                     </div>
                 </div>
+		     <!-- Slide 9 -->
+                <div class="advisor-slide">
+                    <img src="https://cool-rayhan.github.io/BUPC.org/asad sir.jpg" alt="Advisor 7">
+                    <div class="advisor-slide-info">
+                        <h3>Md. Asaduzzaman</h3>
+                        <p>Lecturer</p>
+                        <p>Department of Physics</p>
+                    </div>
+                </div>
 
                 <!-- Add more slides as needed -->
             </div>
@@ -1151,70 +1355,7 @@
 <body>
 
 <div class="container">
-    <div class="member-card" id="member1">
-        <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/alamin.jpg" alt="Al Amin" alt="Member Photo">
-        </div>
-        <div class="member-info">
-            <h2>Al Amin</h2>
-            <span class="toggle-button" onclick="toggleDetails('member1')">▼</span>
-        </div>
-        <div class="member-details">
-            <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
-            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Material sc., Electroporation, Electronics, Computational Physics, Plasma Physics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, Electrodynamics, Particle Physics</p>
-        </div>
-    </div>
-
-     <div class="member-card" id="member2">
-        <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Wasif.jpg" alt="Al Wasif">
-        </div>
-        <div class="member-info">
-            <h2>Al Wasif</h2>
-            <span class="toggle-button" onclick="toggleDetails('member2')">▼</span>
-        </div>
-        <div class="member-details">
-            <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
-            <p><strong>Interested-in:</strong>  Semiconductor, Electroporation, Photonics, Magnetism, Vector Analysis, Optics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Photonics, Magnetism, Vector Analysis, Optics</p>
-        </div>
-    </div>
-
-     <div class="member-card" id="member3">
-        <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Pranto.jpg" alt="Pranto Das" alt="Al Amin" alt="Member Photo">
-        </div>
-        <div class="member-info">
-            <h2>Pranto Das</h2>
-            <span class="toggle-button" onclick="toggleDetails('member3')">▼</span>
-        </div>
-        <div class="member-details">
-            <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
-            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation, Electrodynamics, thermodynamics, Astro-physics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Composite Material, Optics, Electronics</p>
-        </div>
-    </div>
-
-     <div class="member-card" id="member4">
-        <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Ellias.jpg" alt="Al Amin" alt="Member Photo">
-        </div>
-        <div class="member-info">
-            <h2>Elias Hossain Abid</h2>
-            <span class="toggle-button" onclick="toggleDetails('member4')">▼</span>
-        </div>
-        <div class="member-details">
-            <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 10th(BU)</p>
-            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership,Mentorship</p>
-        </div>
-    </div>
-
+	<!--Tamim-->
      <div class="member-card" id="member5">
         <div class="member-photo">
             <img src="https://cool-rayhan.github.io/BUPC/Tamim.jpg" alt="Al Amin" alt="Member Photo">
@@ -1225,28 +1366,44 @@
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
+            <p><strong>Session:</strong> 2018-19</p>
             <p><strong>Interested-in:</strong>  Semiconductor, Electronics, Thermodynamics, Quantum Physics, Networking System</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Backend, Anchoring, RJ, Leadership, Mentorship, Networking, Art</p>
         </div>
     </div>
-
-     <div class="member-card" id="member6">
+	<!--Al Amin-->
+    <div class="member-card" id="member1">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Sabbir.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/alamin.jpg" alt="Al Amin" alt="Member Photo">
         </div>
         <div class="member-info">
-            <h2>Md. Sabbir Ahmed</h2>
-            <span class="toggle-button" onclick="toggleDetails('member6')">▼</span>
+            <h2>Al Amin</h2>
+            <span class="toggle-button" onclick="toggleDetails('member1')">▼</span>
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 9th(BU)</p>
-            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Quantum-dots, Quantum Physics, Electronics, Material Science</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, RJ, Human Research, Deep Learning</p>
+            <p><strong>Session:</strong> 2018-19</p>
+            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Material sc., Electroporation, Electronics, Computational Physics, Plasma Physics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, Electrodynamics, Particle Physics</p>
         </div>
     </div>
-
+<!--Al Wasif-->
+     <div class="member-card" id="member2">
+        <div class="member-photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Wasif.jpg" alt="Al Wasif">
+        </div>
+        <div class="member-info">
+            <h2>Al Wasif</h2>
+            <span class="toggle-button" onclick="toggleDetails('member2')">▼</span>
+        </div>
+        <div class="member-details">
+            <p><strong>Discipline:</strong> Physics</p>
+            <p><strong>Session:</strong> 2018-19</p>
+            <p><strong>Interested-in:</strong>  Semiconductor, Electroporation, Photonics, Magnetism, Vector Analysis, Optics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Photonics, Magnetism, Vector Analysis, Optics</p>
+        </div>
+    </div>
+	<!--Amzad-->
      <div class="member-card" id="member7">
         <div class="member-photo">
             <img src="https://cool-rayhan.github.io/BUPC/Amzad.jpg" alt="Al Amin" alt="Member Photo">
@@ -1257,28 +1414,28 @@
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
+            <p><strong>Session:</strong>2018-19</p>
             <p><strong>Interested-in:</strong> Quantum Mechanics, Condensed Matter Physics, Semiconductor, Wave, Astro Physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Backend DD, FD, Mentorship, Sound Engineering</p>
         </div>
     </div>
-
-     <div class="member-card" id="member8">
+<!--Panto-->
+     <div class="member-card" id="member3">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Sawon.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Pranto.jpg" alt="Pranto Das" alt="Al Amin" alt="Member Photo">
         </div>
         <div class="member-info">
-            <h2>Abdullah Al Sawon</h2>
-            <span class="toggle-button" onclick="toggleDetails('member8')">▼</span>
+            <h2>Pranto Das</h2>
+            <span class="toggle-button" onclick="toggleDetails('member3')">▼</span>
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 10th(BU)</p>
-            <p><strong>Interested-in:</strong> Quantum Mechanics, Semiconductor, Electroporation, Opto-electronics</p>
-             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership, Problem solving, Origami, Photography </p>
+            <p><strong>Session:</strong> 2018-19</p>
+            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation, Electrodynamics, thermodynamics, Astro-physics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Composite Material, Optics, Electronics</p>
         </div>
     </div>
-
+	<!--Rayhan-->
      <div class="member-card" id="member9">
         <div class="member-photo">
             <img src="https://cool-rayhan.github.io/BUPC/Warm+Virtual+Headshot+OFfice+Background.jpg" alt="Al Amin" alt="Member Photo">
@@ -1289,12 +1446,12 @@
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 8th(BU)</p>
+            <p><strong>Session:</strong>2018-19</p>
             <p><strong>Interested-in:</strong> AI, Electronics, Semiconductor, Q-dots, Astro-Physics, Themodynamics, Particle Accelerator, Electrodynamics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Machine Learning, PC Hardware, Electronics, Sound Engineering</p>
         </div>
     </div>
-
+	<!--Sadat-->
      <div class="member-card" id="member10">
         <div class="member-photo">
             <img src="https://cool-rayhan.github.io/BUPC/sadat.jpg" alt="Al Amin" alt="Member Photo">
@@ -1305,12 +1462,29 @@
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 9th(BU)</p>
+            <p><strong>Session:</strong> 2019-20</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electronics, Quantum Physcics, Material Science, Computational Physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Debate, Python, Leadership, Mentorship, RJ, Dance, Problem Solving, Quantum Computing, Lab EXP, Electronics, Arospace</p>
         </div>
     </div>
+	<!--Sabbir-->
+     <div class="member-card" id="member6">
+        <div class="member-photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Sabbir.jpg" alt="Al Amin" alt="Member Photo">
+        </div>
+        <div class="member-info">
+            <h2>Md. Sabbir Ahmed</h2>
+            <span class="toggle-button" onclick="toggleDetails('member6')">▼</span>
+        </div>
+        <div class="member-details">
+            <p><strong>Discipline:</strong> Physics</p>
+            <p><strong>Session:</strong> 2019-20</p>
+            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Quantum-dots, Quantum Physics, Electronics, Material Science</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, RJ, Human Research, Deep Learning</p>
+        </div>
+    </div>
 
+	<!--Rafi-->
      <div class="member-card" id="member11">
         <div class="member-photo">
             <img src="https://cool-rayhan.github.io/BUPC/Rafi.jpg" alt="Al Amin" alt="Member Photo">
@@ -1321,13 +1495,43 @@
         </div>
         <div class="member-details">
             <p><strong>Discipline:</strong> Physics</p>
-            <p><strong>Batch:</strong> 9th(BU)</p>
+            <p><strong>Session:</strong> 2019-20</p>
             <p><strong>Interested-in:</strong> Quantum Physics, Semiconductor, Electronics, Q-bits, Radiation, Relativity, Cosmology</p>
              <p><strong>Pro-in:</strong> Ouantum Science, Maths, Research, Python, Leadership, Mentorship, 3D modeling, Motion Graphics, Electronics, PC Harware, Data Science, Cloude Computing</p>
         </div>
     </div>
-
-
+	<!--Sawon-->
+     <div class="member-card" id="member8">
+        <div class="member-photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Sawon.jpg" alt="Al Amin" alt="Member Photo">
+        </div>
+        <div class="member-info">
+            <h2>Abdullah Al Sawon</h2>
+            <span class="toggle-button" onclick="toggleDetails('member8')">▼</span>
+        </div>
+        <div class="member-details">
+            <p><strong>Discipline:</strong> Physics</p>
+            <p><strong>Session:</strong> 2020-21</p>
+            <p><strong>Interested-in:</strong> Quantum Mechanics, Semiconductor, Electroporation, Opto-electronics</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership, Problem solving, Origami, Photography </p>
+        </div>
+    </div>
+<!-- Elias-->
+     <div class="member-card" id="member4">
+        <div class="member-photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Ellias.heic" alt="Al Amin" alt="Member Photo">
+        </div>
+        <div class="member-info">
+            <h2>Elias Hossain Abid</h2>
+            <span class="toggle-button" onclick="toggleDetails('member4')">▼</span>
+        </div>
+        <div class="member-details">
+            <p><strong>Discipline:</strong> Physics</p>
+            <p><strong>Session:</strong> 2020-21</p>
+            <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation</p>
+             <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership,Mentorship</p>
+        </div>
+    </div>
     </div>
 
 <script>
@@ -1433,7 +1637,7 @@
     const startCounting = () => {
       if (!isCountingStarted) {
         counterNumbers.forEach((counterNumber, index) => {
-          const targetNumber = [350, 8, 11, 177][index];
+          const targetNumber = [350, 9, 11, 177][index];
 
           const updateCounter = () => {
             let currentCount = 0;
