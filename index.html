@@ -318,23 +318,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <style>
         /* Top bar styling */
-        #bupc-top-bar {
-            position: fixed;
-            top: 0px; /* Start hidden above the viewport */
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #FAD932;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
-            transition: top 0.3s ease-in-out;
-            z-index: 1000000;
-            font-family: 'Roboto', sans-serif;
-        }
+        /* Top bar styling */
+#bupc-top-bar {
+    position: fixed;
+    top: 0; /* Always fixed at the top */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #FAD932;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000000;
+    font-family: 'Roboto', sans-serif;
+}
+
 
         /* Logo styling */
         .bupc-logo img {
@@ -478,7 +479,7 @@
 
 
     <script>
-       window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function() {
             var menuButton = document.getElementById('bupc-menu-button');
             var overlay = document.getElementById('bupc-nav');
 
@@ -494,29 +495,13 @@
         });
 
                 // JavaScript to show/hide the top bar on scroll
-       let isThrottled = false;
-window.addEventListener('scroll', function() {
-    if (isThrottled) return;
-    isThrottled = true;
-    setTimeout(function() {
-        var bupcTopBar = document.getElementById('bupc-top-bar');
-        var scrollPosition = window.scrollY;
-        var hasReachedThreshold = bupcTopBar.dataset.reachedThreshold === 'true';
-
-        if (scrollPosition > 500) {
-            if (!hasReachedThreshold) {
-                bupcTopBar.style.top = '0';
-                bupcTopBar.dataset.reachedThreshold = 'true';
-            }
-        } else {
-            if (hasReachedThreshold) {
-                bupcTopBar.style.top = '-60px';
-                bupcTopBar.dataset.reachedThreshold = 'false';
-            }
-        }
-        isThrottled = false;
-    }, 200);
+document.addEventListener('DOMContentLoaded', function () {
+    // Ensure the top bar remains fixed at the top of the viewport
+    var bupcTopBar = document.getElementById('bupc-top-bar');
+    bupcTopBar.style.top = '0'; // Keep it permanently fixed at the top
 });
+
+
 
     </script>
 </body>
@@ -649,7 +634,8 @@ window.addEventListener('scroll', function() {
 <style>
   /* Audio Section */
   .audio-section {
-    background-color: rgba(249, 249, 249, 0.05);
+    background:url('voyagerm.webp');
+      background-size: 133%; 
     padding: 20px;
     border: 1px solid #FFD700;
     border-radius: 20px;
@@ -696,8 +682,10 @@ window.addEventListener('scroll', function() {
   }
 
   #play-pause.pause-icon::before {
-    content: '⏸';
+    content: '∣∣';
     transform: scale(1.1);
+      font-weight: bold;
+    
   }
 
   #play-pause:hover {
@@ -713,7 +701,7 @@ window.addEventListener('scroll', function() {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3498db, #8e44ad);
+    background: url('https://cool-rayhan.github.io/BUPC.org/golddsc.png');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -750,6 +738,7 @@ window.addEventListener('scroll', function() {
   .floating-button .icon {
     font-size: 32px;
     color: white;
+      font-weight: bold;
     z-index: 2;
     position: relative;
   }
@@ -793,7 +782,7 @@ window.addEventListener('scroll', function() {
         floatingButton.querySelector(".icon").textContent = "▶";
       } else {
         playPauseBtn.classList.add("pause-icon");
-        floatingButton.querySelector(".icon").textContent = "⏸";
+        floatingButton.querySelector(".icon").textContent = "∣∣";
       }
     }
 
@@ -816,7 +805,7 @@ window.addEventListener('scroll', function() {
       } else {
         audio.play();
         playPauseBtn.classList.add("pause-icon");
-        floatingButton.querySelector(".icon").textContent = "⏸";
+        floatingButton.querySelector(".icon").textContent = "∣∣";
         rotatingBg.classList.add("playing");
         floatingButton.classList.remove("hidden"); // Show floating button
         isPlaying = true;
@@ -1047,7 +1036,7 @@ window.addEventListener('scroll', function() {
             <div class="img-box">
               <img src="https://cool-rayhan.github.io/BUPC/seminar.jpg" alt="" />
               <h5 style="color: #D9F7E4; background-color: rgba(55, 52, 52, 0.68); padding: 10px; border-radius: 10px">
-                Seminar
+                Seminar /<br>Conference
               </h5>
             </div>
             <div class="img-box">
@@ -1174,7 +1163,7 @@ window.addEventListener('scroll', function() {
 	
   <!-- Advisory Panel -->
 	
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -2436,7 +2425,7 @@ function toggleDeltaMembers() {
 </html>
 
     <br><br><br>
-    <!-- Delta Team's Member info [start from]-->
+    <!-- Get in Touch [start from]-->
                 
 <!DOCTYPE html>
 <html lang="en">
@@ -2477,7 +2466,8 @@ nav button.active {
 }
 
 nav button:hover {
-    background-color: #6e364f;
+    background-color: rgba(74, 73, 45, 0);
+    border: 3px solid #FFD700;
 }
 
 /* Subcategory Container Styles */
@@ -2894,7 +2884,7 @@ function addSubcategories(category) {
     <footer>
         <p>&copy; 2024 Barishal University Physics Club. All rights reserved.</p>
         <p>Follow us on <a href="https://www.facebook.com/buphysicsclub">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p> 
-	    <p>Developed by Rayhan Miah (+8801881680420)</p><br>
+	    <p>Developed by <b>Rayhan Miah</b> (+8801881680420) </p><br>
         <img src="https://cool-rayhan.github.io/BUPC/BUPC LOGO.png" style="width: 30%" alt="" />
     </footer>
 
