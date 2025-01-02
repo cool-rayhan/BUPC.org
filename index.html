@@ -321,7 +321,7 @@
         /* Top bar styling */
 #bupc-top-bar {
     position: fixed;
-    top: 0; /* Always fixed at the top */
+    top: 0; /* Ensure it sticks to the top */
     left: 0;
     width: 100%;
     height: 60px;
@@ -334,6 +334,8 @@
     box-sizing: border-box;
     z-index: 1000000;
     font-family: 'Roboto', sans-serif;
+    transform: translateY(0); /* Always visible */
+    transition: transform 0.3s ease-in-out; /* For smoothness if you decide to hide/show */
 }
 
 
@@ -494,12 +496,12 @@
             });
         });
 
-                // JavaScript to show/hide the top bar on scroll
-document.addEventListener('DOMContentLoaded', function () {
-    // Ensure the top bar remains fixed at the top of the viewport
+              document.addEventListener('DOMContentLoaded', function () {
+    // Ensure the top bar remains fixed and doesn't move
     var bupcTopBar = document.getElementById('bupc-top-bar');
     bupcTopBar.style.top = '0'; // Keep it permanently fixed at the top
 });
+
 
 
 
@@ -634,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <style>
   /* Audio Section */
   .audio-section {
-    background:url('voyagerm.webp');
+    background:url('https://cool-rayhan.github.io/BUPC.org/voyagerm.webp');
       background-size: 133%; 
     padding: 20px;
     border: 1px solid #FFD700;
@@ -682,7 +684,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   #play-pause.pause-icon::before {
-    content: '∣∣';
+    content: 'll';
     transform: scale(1.1);
       font-weight: bold;
     
@@ -782,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function () {
         floatingButton.querySelector(".icon").textContent = "▶";
       } else {
         playPauseBtn.classList.add("pause-icon");
-        floatingButton.querySelector(".icon").textContent = "∣∣";
+        floatingButton.querySelector(".icon").textContent = "ll";
       }
     }
 
@@ -805,7 +807,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         audio.play();
         playPauseBtn.classList.add("pause-icon");
-        floatingButton.querySelector(".icon").textContent = "∣∣";
+        floatingButton.querySelector(".icon").textContent = "ll";
         rotatingBg.classList.add("playing");
         floatingButton.classList.remove("hidden"); // Show floating button
         isPlaying = true;
