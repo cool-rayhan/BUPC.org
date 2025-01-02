@@ -272,13 +272,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container d-block">
           <div class="main_nav_menu">
             <div class="fk_width">
-              <div class="custom_menu-btn">
-                <button onclick="openNav()">
-                  <span class="s-1"> </span>
-                  <span class="s-2"> </span>
-                  <span class="s-3"> </span>
-                </button>
-              </div>
+              
               <div id="myNav" class="overlay">
                 <div class="overlay-content">
                   <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
@@ -296,15 +290,15 @@
               </div>
             </div>
             <div  class="hlogo">
-                <img src="https://cool-rayhan.github.io/BUPC/logo.png"  width="150px" />
+                <img src=""  width="150px" />
             </div>
             
             <div class="user_option">
               <a href="#">
-                login
+                
               </a>
               <form class="form-inline ">
-                          <i class="material-icons">search</i>
+                          <i class="material-icons"></i>
                 <button class="btn  nav_search-btn" type="submit"></button>
               </form>
             </div>
@@ -315,7 +309,7 @@
     <!-- end header section -->
 <!--menu bar-->
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -331,14 +325,14 @@
             width: 100%;
             height: 60px;
             background-color: #FAD932;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             box-sizing: border-box;
             transition: top 0.3s ease-in-out;
-            z-index: 1000;
+            z-index: 1000000;
             font-family: 'Roboto', sans-serif;
         }
 
@@ -391,7 +385,9 @@
         }
 
         .bupc-join a:hover {
-            background-color: #FFEE00;
+            background-color: #0e9116;
+            color: aliceblue;
+            
         }
 
         /* Menu overlay styling */
@@ -401,10 +397,10 @@
             position: fixed;
             top: 0;
             left: 0;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             overflow: hidden;
-            transition: height 0.5s ease-in-out;
-            z-index: 999;
+            transition: height 0.7s ease-in-out;
+            z-index: 99999;
         }
 
         #bupc-nav .bupc-overlay-content {
@@ -421,14 +417,15 @@
         #bupc-nav .bupc-overlay-content a {
             padding: 8px;
             text-decoration: none;
-            font-size: 36px;
-            color: #818181;
+            font-size: 28px;
+            font-family: serif;
+            color: #fafafa;
             display: block;
             transition: color 0.3s, background-color 0.3s;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.44);
+            border-radius: 15px;
             margin: 5px 0;
-            border: 1px solid white;
+            border: 1px solid #cacaca;
         }
 
         #bupc-nav .bupc-overlay-content a:hover {
@@ -466,10 +463,10 @@
         <div class="bupc-overlay-content">
             <a href="#home">Home</a>
             <a href="https://sites.google.com/bu.ac.bd/bupcmems/members-data">Members </a>
-            <a href="#about">Delta Team</a>
-            <a href="#about">About us</a>
+            <a href="#">Delta Team</a>
+            <a href="https://sites.google.com/bu.ac.bd/bupcmems/about-us">About us</a>
             <a href="#events">Events</a>
-            <a href="#contact">Contact</a>
+            <a href="https://sites.google.com/bu.ac.bd/bupcmems/contact-us">Contact</a>
             <a href="#mission">Mission</a>
             <a href="#vision">Vision</a>
             <a href="#admin">Admin</a>
@@ -496,16 +493,25 @@
             });
         });
 
-        // JavaScript to show/hide the top bar on scroll
+                // JavaScript to show/hide the top bar on scroll
         window.addEventListener('scroll', function() {
             var bupcTopBar = document.getElementById('bupc-top-bar');
             var scrollPosition = window.scrollY;
+            var hasReachedThreshold = bupcTopBar.dataset.reachedThreshold === 'true'; // Track the threshold state
+
             if (scrollPosition > 500) {
-                bupcTopBar.style.top = '0'; // Show the top bar
+                if (!hasReachedThreshold) {
+                    bupcTopBar.style.top = '0'; // Show the top bar
+                    bupcTopBar.dataset.reachedThreshold = 'true'; // Set the threshold state
+                }
             } else {
-                bupcTopBar.style.top = '-60px'; // Hide the top bar
+                if (hasReachedThreshold) {
+                    bupcTopBar.style.top = '-60px'; // Hide the top bar
+                    bupcTopBar.dataset.reachedThreshold = 'false'; // Reset the threshold state
+                }
             }
         });
+
     </script>
 </body>
 </html>
@@ -519,11 +525,10 @@
                 <div class="carousel-item active">
                   <div class="detail-box">
                     <h1>
-                      Welcome to <br />
-                      BUPC
+                      Welcome to BUPC!
                     </h1>
                     <p>
-                      Welcome to the Barishal University Physics Club! We're thrilled to have you here. Dive into the wonders of physics with us through exciting events, discussions, and research opportunities. Join our community and explore the limitless possibilities of the universe!
+                     We're thrilled to have you here. Dive into the wonders of physics with us through exciting events, discussions, and research opportunities. Join our community and explore the limitless possibilities of the universe!
                     </p>
                     <div>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH894y8EuDGin7IOYLouKGHUHohO7SZQYcz2IwnwtCF6Yg2g/viewform?usp=sf_link">
@@ -539,7 +544,7 @@
 
                     </h1>
                     <p>
-                     "Remember to look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist. Be curious."
+                     "Remember to look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist. Be curious." <br>-
                     </p>
                     <div>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH894y8EuDGin7IOYLouKGHUHohO7SZQYcz2IwnwtCF6Yg2g/viewform?usp=sf_link">
@@ -556,7 +561,7 @@
 
                     </h1>
                     <p>
-                     "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees."
+                     "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees." <br>-
                     </p>
                     <div>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH894y8EuDGin7IOYLouKGHUHohO7SZQYcz2IwnwtCF6Yg2g/viewform?usp=sf_link">
@@ -573,7 +578,7 @@
 
                     </h1>
                     <p>
-                     "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution."
+                     "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution." <br>-
 
 
                     </p>
@@ -617,12 +622,217 @@
     </section>
     <!-- end slider section -->
   </div>
+<br><br>
+  <!-- Music section -->
 
-  <!-- about section -->
+<div id="audio-section" class="audio-section">
+  <p class="audio-title">VOYAGER GOLDEN RECORD - GREETINGS IN 55 LANGUAGES</p>
+  <audio id="golden-record" src="https://cool-rayhan.github.io/BUPC.org/vgr.mp3"></audio>
+  <button id="play-pause" class="play pause-icon"></button>
+    
+    
+</div>
 
-  <!-- end about section -->   <br><br><br>
+<!-- Floating Play/Pause Button -->
+<div id="floating-play-pause" class="floating-button hidden">
+  <div class="rotating-bg"></div>
+  <span class="icon">▶</span>
+</div>
 
-  <!DOCTYPE html>
+<!-- Styles -->
+<style>
+  /* Audio Section */
+  .audio-section {
+    background-color: rgba(249, 249, 249, 0.05);
+    padding: 20px;
+    border: 1px solid #FFD700;
+    border-radius: 20px;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .audio-title {
+    font-size: 26px;
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-family: Georgia, ;
+    
+  }
+
+  /* Play/Pause Button */
+  #play-pause {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFC300, #FF5733);
+      margin-left: 15px;
+      margin-bottom: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  #play-pause::before {
+    content: '▶';
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+
+  #play-pause.pause-icon::before {
+    content: '⏸';
+    transform: scale(1.1);
+  }
+
+  #play-pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Floating Button */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .floating-button.hidden {
+    display: none;
+  }
+
+  .floating-button.closing {
+    animation: closeEffect 0.5s forwards;
+  }
+
+  .floating-button .rotating-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url('https://cool-rayhan.github.io/BUPC.org/golddsc.png');
+    background-size: cover;
+    background-position: center;
+    animation: none;
+  }
+
+  .floating-button .rotating-bg.playing {
+    animation: rotate 20s linear infinite;
+  }
+
+  /* Pause Icon Styling */
+  .floating-button .icon {
+    font-size: 32px;
+    color: white;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* Rotating Animation */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Closing Animation */
+  @keyframes closeEffect {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  (function () {
+    const audio = document.getElementById("golden-record");
+    const playPauseBtn = document.getElementById("play-pause");
+    const floatingButton = document.getElementById("floating-play-pause");
+    const rotatingBg = document.querySelector(".rotating-bg");
+    let isPlaying = false;
+
+    // Initialize button state on page load
+    function initializeButtonState() {
+      if (audio.paused) {
+        playPauseBtn.classList.remove("pause-icon");
+        floatingButton.querySelector(".icon").textContent = "▶";
+      } else {
+        playPauseBtn.classList.add("pause-icon");
+        floatingButton.querySelector(".icon").textContent = "⏸";
+      }
+    }
+
+    // Toggle Play/Pause
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playPauseBtn.classList.remove("pause-icon");
+        floatingButton.querySelector(".icon").textContent = "▶";
+        rotatingBg.classList.remove("playing");
+
+        // Add closing effect to floating button
+        floatingButton.classList.add("closing");
+        setTimeout(() => {
+          floatingButton.classList.add("hidden");
+          floatingButton.classList.remove("closing"); // Reset animation state
+        }, 500);
+
+        isPlaying = false;
+      } else {
+        audio.play();
+        playPauseBtn.classList.add("pause-icon");
+        floatingButton.querySelector(".icon").textContent = "⏸";
+        rotatingBg.classList.add("playing");
+        floatingButton.classList.remove("hidden"); // Show floating button
+        isPlaying = true;
+      }
+    }
+
+    // Event Listeners
+    playPauseBtn.addEventListener("click", togglePlayPause);
+    floatingButton.addEventListener("click", togglePlayPause);
+
+    // Ensure correct button state on page load
+    initializeButtonState();
+  })();
+
+</script>
+
+    
+    
+  <!-- [end] Music section -->   <br><br>
+
+    
+    <!--notice section-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1011,7 +1221,7 @@
             min-width: 100%;
             box-sizing: border-box;
             padding: 38px;
-            background: rgba(204, 204, 204, 0.51);
+            background: rgba(198, 198, 198, 0.37);
             border-radius: 20px;
         }
         .advisor-slide img {
@@ -1044,7 +1254,7 @@
             top: 44%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.39);
-            color: #c1c1c1;
+            color: #9e9e9e;
             border: none;
             padding: 15px;
             border-radius: 30%;
@@ -1101,7 +1311,7 @@
 .visit-profile-button:hover {
     color: #000000;
     font-weight: bold;
-    border: solid;
+    border: solid ;
     background-color: transparent;
 }
 
@@ -1118,8 +1328,8 @@
 </head>
 <body>
     <div class="advisor-panel">
-        <h2>Our Advisor Panel</h2>
-        <p>The Barishal University Physics Club is proud to have a diverse and esteemed Advisor Panel comprising faculty members from various departments. Their collective expertise, guidance, and support play a crucial role in shaping our club’s activities and initiatives. These advisors bring a wealth of knowledge and experience from different fields, fostering interdisciplinary collaboration and enriching our understanding of physics. Their dedication helps us create a vibrant, inclusive, and intellectually stimulating environment for all our members. Together, we strive to explore the frontiers of science and inspire the next generation of physicists.</p>
+        <h2>OUR ADVISOR PANEL</h2>
+        <p>The Barishal University Physics Club (BUPC) is proud to have a diverse and esteemed Advisor Panel comprising faculty members from various departments. Their collective expertise, guidance, and support play a crucial role in shaping our club’s activities and initiatives. These advisors bring a wealth of knowledge and experience from different fields, fostering interdisciplinary collaboration and enriching our understanding of physics. Their dedication helps us create a vibrant, inclusive, and intellectually stimulating environment for all our members. Together, we strive to explore the frontiers of science and inspire the next generation of physicists.</p>
         <br>
         <div class="advisor-slider">
             <button class="arrow arrow-left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
@@ -1759,6 +1969,7 @@ setInterval(nextSlide, 5000);
         transition: max-height 1s ease, opacity 1s ease, visibility 0.5s ease; /* Smooth transition */
         margin-top: 0; /* Collapsed margin */
         display: block !important; /* Force display:block for smooth animations */
+     color: black;
     }
 
     /* When the element should be visible */
@@ -1792,7 +2003,19 @@ setInterval(nextSlide, 5000);
         background: linear-gradient(45deg, #FF5722, #FFC107);
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
-
+        .fb{
+            background-color: rgb(0, 0, 0);
+            padding: 7px;
+            margin-left: 100px;
+            margin-right: 100px;
+            border-radius: 12px;
+            color: aliceblue;
+               
+        }
+        .fb:hover{
+          background-color: #1b375f;  
+            
+        }
 
     </style>
 </head>
@@ -1813,7 +2036,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2018-19</p>
             <p><strong>Interested-in:</strong>  Semiconductor, Electronics, Thermodynamics, Quantum Physics, Networking System</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Backend, Anchoring, RJ, Leadership, Mentorship, Networking, Art</p>
-        </div>
+       <a href="https://www.facebook.com/100008373243198/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 	<!--Al Amin-->
     <div class="member-card" id="member1">
@@ -1829,6 +2053,7 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2018-19</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Material sc., Electroporation, Electronics, Computational Physics, Plasma Physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, Electrodynamics, Particle Physics</p>
+        <a href="https://www.facebook.com/100006321547045/"><p class="fb">Facebook</p></a>
         </div>
     </div>
 <!--Al Wasif-->
@@ -1845,7 +2070,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2018-19</p>
             <p><strong>Interested-in:</strong>  Semiconductor, Electroporation, Photonics, Magnetism, Vector Analysis, Optics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Photonics, Magnetism, Vector Analysis, Optics</p>
-        </div>
+       <a href="https://www.facebook.com/100009480585064/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 	<!--Amzad-->
      <div class="member-card" id="member7">
@@ -1861,7 +2087,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong>2018-19</p>
             <p><strong>Interested-in:</strong> Quantum Mechanics, Condensed Matter Physics, Semiconductor, Wave, Astro Physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Backend DD, FD, Mentorship, Sound Engineering</p>
-        </div>
+       <a href="https://www.facebook.com/100006929077086/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 <!--Panto-->
      <div class="member-card" id="member3">
@@ -1877,7 +2104,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2018-19</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation, Electrodynamics, thermodynamics, Astro-physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Composite Material, Optics, Electronics</p>
-        </div>
+        <a href="https://www.facebook.com/100005880827982/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 	<!--Rayhan-->
      <div class="member-card" id="member9">
@@ -1893,6 +2121,7 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong>2018-19</p>
             <p><strong>Interested-in:</strong> AI, Electronics, Semiconductor, Q-dots, Astro-Physics, Themodynamics, Particle Accelerator, Electrodynamics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Machine Learning, PC Hardware, Electronics, Sound Engineering</p>
+            <a href="https://www.facebook.com/muhammad.rayhan.326154/"><p class="fb">Facebook</p></a>
         </div>
     </div>
 	<!--Sadat-->
@@ -1909,7 +2138,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2019-20</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electronics, Quantum Physcics, Material Science, Computational Physics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Debate, Python, Leadership, Mentorship, RJ, Dance, Problem Solving, Quantum Computing, Lab EXP, Electronics, Arospace</p>
-        </div>
+        <a href="https://www.facebook.com/100011419308696/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 	<!--Sabbir-->
      <div class="member-card" id="member6">
@@ -1925,7 +2155,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2019-20</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Quantum-dots, Quantum Physics, Electronics, Material Science</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, RJ, Human Research, Deep Learning</p>
-        </div>
+        <a href="https://www.facebook.com/100012283188934/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 
 	<!--Rafi-->
@@ -1942,7 +2173,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2019-20</p>
             <p><strong>Interested-in:</strong> Quantum Physics, Semiconductor, Electronics, Q-bits, Radiation, Relativity, Cosmology</p>
              <p><strong>Pro-in:</strong> Ouantum Science, Maths, Research, Python, Leadership, Mentorship, 3D modeling, Motion Graphics, Electronics, PC Harware, Data Science, Cloude Computing</p>
-        </div>
+        <a href="https://www.facebook.com/100007158607421/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 	<!--Sawon-->
      <div class="member-card" id="member8">
@@ -1958,7 +2190,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2020-21</p>
             <p><strong>Interested-in:</strong> Quantum Mechanics, Semiconductor, Electroporation, Opto-electronics</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership, Problem solving, Origami, Photography </p>
-        </div>
+        <a href="https://www.facebook.com/100025826567978/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
 <!-- Elias-->
      <div class="member-card" id="member4">
@@ -1974,7 +2207,8 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> 2020-21</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Electroporation</p>
              <p><strong>Pro-in:</strong> Maths, Research, Python, Leadership,Mentorship</p>
-        </div>
+        <a href="https://www.facebook.com/100050479928933/"><p class="fb">Facebook</p></a>
+         </div>
     </div>
     </div>
 <script>
@@ -2111,6 +2345,7 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> Coming Soon!</p>
             <p><strong>Interested-in:</strong> Semiconductor, Electronics, Thermodynamics, Quantum Physics, Networking System</p>
             <p><strong>Pro-in:</strong> Maths, Research, Python, Backend, Anchoring, RJ, Leadership, Mentorship, Networking, Art</p>
+        <a href="https://www.facebook.com/"><p class="fb">Facebook</p></a>
         </div>
     </div>
     <!-- mem 1 -->
@@ -2127,6 +2362,7 @@ setInterval(nextSlide, 5000);
             <p><strong>Session:</strong> Coming Soon!</p>
             <p><strong>Interested-in:</strong> Condensed Matter Physics, Semiconductor, Material sc., Electroporation, Electronics, Computational Physics, Plasma Physics</p>
             <p><strong>Pro-in:</strong> Maths, Research, Python, Problem Solving, Electrodynamics, Particle Physics</p>
+       <a href="https://www.facebook.com/"><p class="fb">Facebook</p></a>
         </div>
     </div>
 </div>
@@ -2193,10 +2429,320 @@ function toggleDeltaMembers() {
 </body>
 </html>
 
-    
+    <br><br><br>
     <!-- Delta Team's Member info [start from]-->
                 
-                
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagements</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       /* General Styles for Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+}
+
+nav button {
+    background-color: rgba(68, 68, 68, 0.45);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: serif;
+    border: 2px solid rgba(119, 119, 119, 0.58);
+    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.52);
+}
+
+nav button.active {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #6e364f;
+}
+
+/* Subcategory Container Styles */
+#subcategory-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+    margin-right: 20px;
+    margin-left: 20px;
+    background: rgba(140, 140, 140, 0.39);
+    border-radius: 15px;
+    border: 1px solid rgba(155, 155, 155, 0.53);
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    filter: blur(10px);
+    transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#subcategory-container.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+}
+
+/* Button Styles within the Subcategory Container */
+#subcategory-container button {
+    background: linear-gradient(115deg, rgb(1, 1, 1), rgb(79, 79, 79));
+    border: none;
+    border-radius: 12px;
+    border: 2px solid rgba(110, 110, 110, 0.79);
+    color: #f4f4f4;
+    font-family: serif;
+    padding: 8px 25px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease, box-shadow 0.8s ease;
+    width: calc(100% / 5 - 20px);
+    max-width: 250px;
+    min-width: 80px;
+    height: 45px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0px 9px 7px rgba(0, 0, 0, 0.52);
+    position: relative;
+    will-change: transform, opacity, box-shadow;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    filter: blur(5px);
+}
+
+#subcategory-container button.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#subcategory-container button:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(49, 54, 50, 0.95));
+    color: #0ce4ef;
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+#subcategory-container button.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: rgb(34, 129, 104);
+    font-weight: bold;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5), 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#subcategory-container button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#subcategory-container button:hover:before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#subcategory-container button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowFlow {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #subcategory-container {
+        justify-content: space-around;
+    }
+
+    #subcategory-container button {
+        width: calc(100% / 3 - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    #subcategory-container button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: yellow">Get in Touch</h1>
+        <p style="color: antiquewhite">Explore Fast</p>
+        <nav>
+            <button onclick="showSubcategories('all')">All</button>
+            <button onclick="showSubcategories('courses')">Courses</button>
+            <button onclick="showSubcategories('workshop')">Workshop</button>
+            <button onclick="showSubcategories('vity')">Activities</button>
+            <button onclick="showSubcategories('events')">Events</button>
+        </nav>
+        <div id="subcategory-container"></div>
+    </header>
+
+    <script>
+      const subcategories = {
+    courses: [
+        { name: 'Academic', link: 'https://youtu.be/pyX8kQ-JzHI?si=ouBYFaiLtefCPSAO' },
+        { name: 'AI', link: 'https://www.coursera.org/courses?query=artificial%20intelligencel' },
+        { name: 'Research', link: 'www.youtube.com/@BeResearcherBD' },
+        { name: 'Development', link: 'https://www.youtube.com/watch?v=mZu19BieYK0&list=PLy0nhnjSE4ipl3dXqWbE_ZvBiHeySwiP7' }
+    ],
+    workshop: [
+        { name: 'Research', link: 'www.youtube.com/@BeResearcherBD' },
+        { name: 'Robotics', link: 'https://www.edx.org/learn/robotics' },
+        { name: 'Neural Model', link: 'neural-model.html' },
+        { name: 'PC Hardware', link: 'https://pcbuilderbd.com/' },
+        { name: 'Tech & Talk', link: 'https://www.tomshardware.com/' }
+    ],
+    vity: [
+        { name: 'Writing', link: 'https://www.facebook.com/groups/683721936006630' },
+        { name: 'Space Observation', link: 'https://science.nasa.gov/mission/webb/' },
+        { name: 'Collab', link: 'https://www.facebook.com/groups/683721936006630' },
+        { name: 'Brainstorming', link: 'https://www.facebook.com/groups/683721936006630' },
+        { name: 'Wellbeing', link: 'https://www.facebook.com/groups/683721936006630' }
+    ],
+    events: [
+        { name: 'Meeting', link: 'meeting.html' },
+        { name: 'Conferences', link: 'https://conferencealerts.co.in/bangladesh/physics' },
+        { name: 'Hackathons', link: 'https://devpost.com/hackathons' },
+        { name: 'Social', link: 'social.html' },
+        { name: 'Fair', link: 'fair.html' },
+        { name: 'Misc', link: 'misc.html' }
+    ]
+};
+
+window.onload = function() {
+    // Default to 'Courses' and set it as active
+    showSubcategories('courses');
+};
+
+function showSubcategories(category) {
+    const subcategoryContainer = document.getElementById('subcategory-container');
+    const navButtons = document.querySelectorAll('nav button');
+
+    // Map button text to subcategory keys
+    const categoryMap = {
+        all: 'all',
+        courses: 'courses',
+        workshop: 'workshop',
+        activities: 'vity', // Map "Activities" button to the "vity" category key
+        events: 'events'
+    };
+
+    // Reset the active class for all nav buttons
+    navButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Find the button corresponding to the selected category and set it as active
+    navButtons.forEach(button => {
+        const buttonText = button.textContent.trim().toLowerCase();
+        if (categoryMap[buttonText] === category.toLowerCase()) {
+            button.classList.add('active');
+        }
+    });
+
+    // Remove animations from the subcategory container
+    subcategoryContainer.classList.remove('show');
+
+    // Add a short delay for smooth transition
+    setTimeout(() => {
+        // Clear the existing buttons in the subcategory container
+        subcategoryContainer.innerHTML = '';
+
+        // Add new buttons based on the selected category
+        if (category === 'all') {
+            Object.keys(subcategories).forEach(cat => addSubcategories(cat));
+        } else {
+            addSubcategories(category);
+        }
+
+        // Show the container with fade-in and soft scaling
+        subcategoryContainer.classList.add('show');
+
+        // Reveal each button with a subtle staggered animation
+        const newButtons = document.querySelectorAll('#subcategory-container button');
+        newButtons.forEach((button, index) => {
+            setTimeout(() => {
+                button.classList.add('show');
+            }, 100 * index); // Staggered animation effect
+        });
+    }, 200); // Short delay for smoother transition
+}
+
+function addSubcategories(category) {
+    const subcategoryContainer = document.getElementById('subcategory-container');
+    subcategories[category].forEach(sub => {
+        const button = document.createElement('button');
+        button.textContent = sub.name;
+        button.onclick = () => window.location.href = sub.link;
+        subcategoryContainer.appendChild(button);
+    });
+}
+
+
+
+    </script>
+</body>
+</html>
+
                 
                 
                 
@@ -2334,14 +2880,14 @@ function toggleDeltaMembers() {
 </body>
 </html> 
 
-  <br><br><br><br><br>
+  <br><br><br>
 
 
   <br>
   <br>
     <footer>
         <p>&copy; 2024 Barishal University Physics Club. All rights reserved.</p>
-        <p>Follow us on <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p> 
+        <p>Follow us on <a href="https://www.facebook.com/buphysicsclub">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p> 
 	    <p>Developed by Rayhan Miah (+8801881680420)</p><br>
         <img src="https://cool-rayhan.github.io/BUPC/BUPC LOGO.png" style="width: 30%" alt="" />
     </footer>
