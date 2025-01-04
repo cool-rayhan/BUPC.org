@@ -90,6 +90,8 @@ main {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.2);
 }
+  
+  
 
 footer {
   background: #FAD932;
@@ -175,7 +177,6 @@ footer {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUPC Top Bar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <style>
         /* Top bar styling */
@@ -238,12 +239,12 @@ footer {
         .bupc-join a {
             font-family: Roboto;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 14px;
             background-color: #333333;
             color: #FFFFFF;
             font-weight: bold;
-            font-size: 16px;
-            border-radius: 20px;
+            font-size: 15px;
+            border-radius: 50px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
@@ -370,6 +371,31 @@ footer {
 </body>
 </html>
     <!-- slider section -->
+    <style>
+.slider-row .carousel .carousel-inner {
+  height: 600px; /* Adjust this to the maximum height needed */
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+.slider-row .carousel .carousel-item .detail-box {
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.slider-row .carousel .carousel-item h1,
+.slider-row .carousel .carousel-item p {
+  margin: 0;
+  line-height: 1.5; /* Ensure consistent line spacing */
+}
+
+@media (max-width: 768px) {
+  .slider-row .carousel .carousel-inner {
+    height: 400px; /* Adjust for smaller screens */
+  }
+}
+</style>
+
+
     <section class=" slider_section position-relative">
       <div class="container-fluid">
         <div class="row slider-row">
@@ -377,8 +403,8 @@ footer {
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="detail-box">
-                    <h1>
+                  <div class="detail-box" >
+                    <h1 style="font-family: serif;">
                       Welcome to BUPC!
                     </h1>
                     <p>
@@ -393,7 +419,7 @@ footer {
                 </div>
                 <div class="carousel-item">
                   <div class="detail-box">
-                    <h1>
+                    <h1 style="font-family: serif;">
                       Stephen Hawking: <br />
 
                     </h1>
@@ -410,12 +436,12 @@ footer {
 
                 <div class="carousel-item">
                   <div class="detail-box">
-                    <h1>
+                    <h1 style="font-family: serif;">
                       Erwin Schroedinger: <br />
 
                     </h1>
                     <p>
-                     "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees." <br>-
+                     "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees." <br><br>-
                     </p>
                     <div>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH894y8EuDGin7IOYLouKGHUHohO7SZQYcz2IwnwtCF6Yg2g/viewform?usp=sf_link">
@@ -427,7 +453,7 @@ footer {
 
                  <div class="carousel-item">
                   <div class="detail-box">
-                    <h1>
+                    <h1 style="font-family: serif;">
                       Albert Einstein: <br />
 
                     </h1>
@@ -445,7 +471,7 @@ footer {
                 </div>
 
               </div>
-              <div class="carousel_control-box">
+              <div class="carousel_control-box" style="max-width: 180px;">
                 <div class="carousel_btn-container">
                   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -468,7 +494,7 @@ footer {
           </div>
           <div class="col-lg-8 px-0">
             <div class="img-box">
-              <img src="https://cool-rayhan.github.io/BUPC.org/bggg.png" alt="" />
+              <img src="https://cool-rayhan.github.io/BUPC.org/bggg.png" alt="" style="margin-top: 50px;" />
             </div>
           </div>
         </div>
@@ -478,6 +504,9 @@ footer {
   </div>
 <br><br>
   <!-- Music section -->
+  
+  
+  
 
 <div id="audio-section" class="audio-section">
   <p class="audio-title">VOYAGER GOLDEN RECORD - GREETINGS IN 55 LANGUAGES</p>
@@ -497,17 +526,19 @@ footer {
 <style>
   /* Audio Section */
   .audio-section {
-    background:url('https://cool-rayhan.github.io/BUPC.org/voyagerm.webp');
-      background-size: 133%; 
-    padding: 20px;
-    border: 1px solid #FFD700;
+    background: url('https://cool-rayhan.github.io/BUPC.org/voyagerm.webp') no-repeat center center;
+    background-size: cover; /* Scales the background to cover the section */
+    padding: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.30);
     border-radius: 20px;
-    width: 80%;
+    max-width: 600px;
+    width: 93%;
     margin: 20px auto;
     text-align: center;
     position: relative;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  }
+}
+
 
   .audio-title {
     font-size: 26px;
@@ -564,7 +595,7 @@ footer {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: url('https://cool-rayhan.github.io/BUPC.org/golddsc.png');
+    background: url('https://cool-rayhan.github.io/BUPC.org/golddsc.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -686,8 +717,63 @@ footer {
 </script>
 
     
+   <style>
+  .unique-section {
+    padding: 50px 20px;
+    background-color: rgba(188, 188, 188, 0.35);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    text-align: center;
+    max-width: 600px;
+    width: 93%;
+    border: 2px solid rgba(255, 215, 0, 0.25);
+  }
+
+  .unique-section h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .wiki-mem-toggle-button {
+    display: inline-block;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    padding: 15px 40px;
+    color: #FFD700;
+    font-size: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    background: rgba(36, 36, 36, 0.26);
+    border: 2px solid #FFD700;
+    border-radius: 35px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+  }
+
+  .wiki-mem-toggle-button:hover {
+    color: #ffffff;
+    background: #1e90ff;
     
-  <!-- [end] Music section -->   <br><br>
+    border-color: #1e90ff;
+    transform: scale(1.1);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+<div class="unique-section">
+  <h2>Explore BUPC</h2>
+  <a href="https://en.wikipedia.org/wiki/User:Rayhan.phy/sandbox" class="wiki-mem-toggle-button">
+    Visit Our Wikipedia Page
+  </a>
+</div>
+ 
+  <!-- [end] Music section -->   
 
     
     <!--notice section-->
@@ -867,10 +953,10 @@ footer {
       <div class="row">
         <div class="col-lg-5 ml-auto">
           <div class="heading_container">
-            <h2>
-             Events
+            <h2><u>
+             Events</u>
             </h2>
-            <p>
+            <p style="text-align: justify; text-align-last: center;">
               Stay tuned for an array of exciting events hosted by the Barishal University Physics Club! Join us for engaging seminars, hands-on workshops, and thought-provoking discussions. Whether you’re looking to expand your knowledge, connect with fellow physics enthusiasts, or participate in cutting-edge research, our events offer something for everyone.
                Don’t miss out on the opportunity to explore the wonders of physics with us!
             </p>
@@ -946,10 +1032,10 @@ footer {
         <div class="col-md-5">
           <div class="detail-box">
             <div class="heading_container">
-              <h2>
-                Timeline
+              <h2><u>
+                Timeline</u>
               </h2>
-              <p>
+              <p style="text-align: justify; text-align-last: center;">
                 Take a journey through the history of the Barishal University Physics Club! Our timeline highlights key milestones, memorable events, and significant achievements. From our founding days to our latest endeavors, see how we've grown and evolved. Discover the passion, dedication, and innovation that drive our club forward. Join us in celebrating our past, present, and future as we continue to explore the limitless world of physics together!
               </p>
               <a href="">
@@ -986,7 +1072,7 @@ footer {
                       </h6>
                     </div>
                   </div>
-                  <p>
+                  <p style="text-align: justify; text-align-last: center;">
                     The Barishal University Physics Club was founded with a shared passion for exploring the mysteries of the universe. From our humble beginnings, we have grown into a vibrant community of students and faculty dedicated to advancing our understanding of physics. Join us as we continue to embark on this exciting journey of discovery and innovation!
                   </p>
                 </div>
@@ -1011,7 +1097,7 @@ footer {
                       </h6>
                     </div>
                   </div>
-                  <p>
+                  <p style="text-align: justify; text-align-last: center;">
                   The Barishal University Physics Club was established to ignite curiosity and foster a deeper understanding of the physical world. What began as a small group of enthusiastic students and dedicated faculty has evolved into a dynamic community committed to exploring, learning, and pushing the boundaries of physics. Join us as we continue to chart new territories and unravel the mysteries of the universe together!
                    </p>
                 </div>
@@ -1038,16 +1124,25 @@ footer {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            background: rgba(255, 255, 255, 0.32);
+            background: rgba(255, 255, 255, 0.25);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+          backdrop-filter: blur(5px); /* Adds the blur effect */
+          
         }
+      @media (max-width: 750px) {
+  .advisor-panel {
+    width: 93%;;
+  }
+}
+      
+      
         .advisor-panel h2 {
             margin-bottom: 20px;
             font-size: 28px;
             font-weight: bold;
-            color: #161b1f;
+            color: #deda27;
         }
         .advisor-panel p {
             margin-bottom: 30px;
@@ -1060,28 +1155,34 @@ footer {
             
             width: 100%;
             overflow: hidden;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.42);
+          
         }
        .advisor-slides {
     display: flex; /* Arrange slides in a row */
     gap: 10px; /* Add 10px space between slides */
     transition: transform 2s ease-in-out; /* Smooth transition */
+         
            
 }
 
 .advisor-slide {
     flex: 0 0 calc(100% - 10px); /* Adjust the slide width to account for the 10px gap */
     box-sizing: border-box; /* Include padding and border in the element's total width */
+  
 }
 
-        .advisor-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 38px;
-            background: rgba(198, 198, 198, 0.37);
-            border-radius: 20px;
-        }
+       .advisor-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 38px;
+    background: rgba(119, 119, 119, 0.2);
+    backdrop-filter: blur(2px);
+        /* Adds the blur effect */
+    border-radius: 20px;
+}
+
         .advisor-slide img {
             width: 150px;
             height: 150px;
@@ -1187,7 +1288,7 @@ footer {
 <body>
     <div class="advisor-panel">
         <h2>OUR ADVISOR PANEL</h2>
-        <p>The Barishal University Physics Club (BUPC) is proud to have a diverse and esteemed Advisor Panel comprising faculty members from various departments. Their collective expertise, guidance, and support play a crucial role in shaping our club’s activities and initiatives. These advisors bring a wealth of knowledge and experience from different fields, fostering interdisciplinary collaboration and enriching our understanding of physics. Their dedication helps us create a vibrant, inclusive, and intellectually stimulating environment for all our members. Together, we strive to explore the frontiers of science and inspire the next generation of physicists.</p>
+        <p style="text-align: justify; text-align-last: center; ">The Barishal University Physics Club (BUPC) is proud to have a diverse and esteemed Advisor Panel comprising faculty members from various departments. Their collective expertise, guidance, and support play a crucial role in shaping our club’s activities and initiatives. These advisors bring a wealth of knowledge and experience from different fields, fostering interdisciplinary collaboration and enriching our understanding of physics. Their dedication helps us create a vibrant, inclusive, and intellectually stimulating environment for all our members. Together, we strive to explore the frontiers of science and inspire the next generation of physicists.</p>
         <br>
         <div class="advisor-slider">
             <button class="arrow arrow-left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
@@ -1371,7 +1472,7 @@ setInterval(nextSlide, 5000);
      <!-- nucleus team -->
 
 <!-- start of intro-->
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1432,7 +1533,7 @@ setInterval(nextSlide, 5000);
     <div class="bupc-background">
         <div class="bupc-container">
             <h1>BUPC's Guiding Force: The Nucleus Team</h1>
-            <h6 style="font-family: monospace; color: #95996E">The Barishal University Physics Club (BUPC) is steered by its 11-member Nucleus Team. These dedicated individuals lead, manage, and support the club, ensuring its smooth operation and vibrant physics community.</h6>
+            <h6 style="font-family: serif; color: #72764e">The Barishal University Physics Club (BUPC) is steered by its 11-member Nucleus Team. These dedicated individuals lead, manage, and support the club, ensuring its smooth operation and vibrant physics community.</h6>
             <div class="bupc-team-member">
                 <div class="bupc-name">Al Amin</div>
                 <div class="bupc-joined">Joined: 3/6/24 - Present</div>
@@ -1491,7 +1592,7 @@ setInterval(nextSlide, 5000);
 
    
     
-    <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1507,7 +1608,7 @@ setInterval(nextSlide, 5000);
         }
 
         .nucleus-toggle-button {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
+            background: linear-gradient(135deg, #FFD700, #ff6b00);
             border: none;
             padding: 15px 35px;
             color: #121212;
@@ -1536,6 +1637,7 @@ setInterval(nextSlide, 5000);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
             max-height: 600px;
+          
         }
 
         .nucleus-header {
@@ -1560,23 +1662,49 @@ setInterval(nextSlide, 5000);
         }
 
         .nucleus-close-button {
-            background: rgb(202, 202, 202);
-            border: none;
-            color: #ff0000;
-            padding: 0px 10px;
-            border-radius: 30%;
-            font-size: 27px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
+       background: rgb(202, 202, 202);
+    border: none;
+    color: #ff0000;
+    padding: 0px 10px;
+    border-radius: 30%;
+    font-size: 27px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
 
-        .nucleus-close-button:hover {
-            transform: rotate(90deg);
-            background: #ff2222;
-            color: aliceblue;
-        }
+.nucleus-close-button:hover {
+    transform: scale(1.1) rotate(90deg);
+    background: #ff2222;
+    color: white;
+}
+
+@keyframes nucleusCloseEffect {
+    0% {
+        transform: scale(1) rotate(0deg);
+        background: #ff2222;
+        box-shadow: 0 0 10px rgba(255, 34, 34, 0.7);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) rotate(180deg);
+        background: #ff8800;
+        box-shadow: 0 0 20px rgba(255, 136, 0, 0.9);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.8) rotate(360deg);
+        background: #ff0000;
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        opacity: 0;
+    }
+}
+
+.nucleus-close-button.closing-effect {
+    animation: nucleusCloseEffect 2s ease forwards;
+}
+
 
         .nucleus-tile-container {
             margin-top: 15px;
@@ -1682,24 +1810,52 @@ setInterval(nextSlide, 5000);
             font-size: 30px;
         }
 
-        .delta-close-button {
-            background: rgb(202, 202, 202);
-            border: none;
-            color: #ff0000;
-            padding: 0px 10px;
-            border-radius: 30%;
-            font-size: 27px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
+.delta-close-button {
+    background: rgb(202, 202, 202);
+    border: none;
+    color: #ff0000;
+    padding: 0px 10px;
+    border-radius: 30%;
+    font-size: 27px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
 
-        .delta-close-button:hover {
-            transform: rotate(90deg);
-            background: #ff2222;
-            color: aliceblue;
-        }
+.delta-close-button:hover {
+    transform: scale(1.1) rotate(90deg);
+    background: #ff2222;
+    color: aliceblue;
+}
+
+@keyframes awesomeClose {
+    0% {
+        transform: scale(1) rotate(0deg);
+        background: #ff2222;
+        box-shadow: 0 0 10px rgba(255, 34, 34, 0.7);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) rotate(180deg);
+        background: #ffb200;
+        box-shadow: 0 0 20px rgba(255, 136, 0, 0.9);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.8) rotate(360deg);
+        background: #ff0000;
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        opacity: 0;
+    }
+}
+
+.delta-close-button.closing-effect {
+    animation: awesomeClose 2s ease forwards;
+}
+
+
+
 
         .delta-tile-container {
             margin-top: 15px;
@@ -1755,7 +1911,7 @@ setInterval(nextSlide, 5000);
         .mem-toggle-button {
             background: linear-gradient(95deg, #57ff00, #fff56d);
             border: none;
-            padding: 15px 50px;
+            padding: 15px 38px;
             color: #121212;
             font-size: 20px;
             font-family: monospace;
@@ -1784,7 +1940,7 @@ setInterval(nextSlide, 5000);
             </div>
             <div class="nucleus-tile-container">
                 <!--****-->
-            <!DOCTYPE html>
+            
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1793,13 +1949,16 @@ setInterval(nextSlide, 5000);
     <style>
        .member-card {
     position: relative;
-    border: 1px solid #bcbcbc;
+    border: 1px solid #a5a5a5;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 30px;
-    background-color: rgba(234, 233, 229, 0.52);
+    background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
     transition: height 0.3s ease;
+         backdrop-filter: blur(5px);
+         font-family: serif;
+         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 .member-photo {
     width: 150px;
@@ -1864,8 +2023,8 @@ setInterval(nextSlide, 5000);
         .fb{
             background-color: rgb(0, 0, 0);
             padding: 7px;
-            margin-left: 100px;
-            margin-right: 100px;
+            margin-left: 90px;
+            margin-right: 90px;
             border-radius: 12px;
             color: aliceblue;
                
@@ -1883,7 +2042,7 @@ setInterval(nextSlide, 5000);
 	<!--Tamim-->
      <div class="member-card" id="member5">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Tamim.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Tamim.jpg" alt="Abdul Hafiz Tamim">
         </div>
         <div class="member-info">
             <h2>Abdul Hafiz Tamim</h2>
@@ -1900,7 +2059,7 @@ setInterval(nextSlide, 5000);
 	<!--Al Amin-->
     <div class="member-card" id="member1">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/alamin.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/alamin.jpg" alt="Al Amin" >
         </div>
         <div class="member-info">
             <h2>Al Amin</h2>
@@ -1934,7 +2093,7 @@ setInterval(nextSlide, 5000);
 	<!--Amzad-->
      <div class="member-card" id="member7">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Amzad.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Amzad.jpg" alt="Amjad Hossain" >
         </div>
         <div class="member-info">
             <h2>Amjad Hossain</h2>
@@ -1951,7 +2110,7 @@ setInterval(nextSlide, 5000);
 <!--Panto-->
      <div class="member-card" id="member3">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Pranto.jpg" alt="Pranto Das" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Pranto.jpg" alt="Pranto Das" >
         </div>
         <div class="member-info">
             <h2>Pranto Das</h2>
@@ -1968,7 +2127,7 @@ setInterval(nextSlide, 5000);
 	<!--Rayhan-->
      <div class="member-card" id="member9">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Warm+Virtual+Headshot+OFfice+Background.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Warm+Virtual+Headshot+OFfice+Background.jpg" alt="Rayhan Miah">
         </div>
         <div class="member-info">
             <h2>Rayhan Miah</h2>
@@ -1985,7 +2144,7 @@ setInterval(nextSlide, 5000);
 	<!--Sadat-->
      <div class="member-card" id="member10">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/sadat.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/sadat.jpg" alt="Abu Sadat">
         </div>
         <div class="member-info">
             <h2>Abu Sadat</h2>
@@ -2002,7 +2161,7 @@ setInterval(nextSlide, 5000);
 	<!--Sabbir-->
      <div class="member-card" id="member6">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Sabbir.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC.org/sabbir.jpeg" alt="Md. Sabbir Ahmed">
         </div>
         <div class="member-info">
             <h2>Md. Sabbir Ahmed</h2>
@@ -2020,7 +2179,7 @@ setInterval(nextSlide, 5000);
 	<!--Rafi-->
      <div class="member-card" id="member11">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Rafi.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Rafi.jpg" alt="Md. Tanvir Islam Raf" >
         </div>
         <div class="member-info">
             <h2>Md. Tanvir Islam Rafi</h2>
@@ -2037,7 +2196,7 @@ setInterval(nextSlide, 5000);
 	<!--Sawon-->
      <div class="member-card" id="member8">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC/Sawon.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC/Sawon.jpg" alt="Abdullah Al Sawon">
         </div>
         <div class="member-info">
             <h2>Abdullah Al Sawon</h2>
@@ -2054,7 +2213,7 @@ setInterval(nextSlide, 5000);
 <!-- Elias-->
      <div class="member-card" id="member4">
         <div class="member-photo">
-            <img src="https://cool-rayhan.github.io/BUPC.org/Elias_.jpg" alt="Al Amin" alt="Member Photo">
+            <img src="https://cool-rayhan.github.io/BUPC.org/Elias_.jpg" alt="Elias Hossain Abid" >
         </div>
         <div class="member-info">
             <h2>Elias Hossain Abid</h2>
@@ -2105,9 +2264,7 @@ setInterval(nextSlide, 5000);
             </div>
             <div class="delta-tile-container">
                 <!--****-->
-            <!DOCTYPE html>
-<!DOCTYPE html>
-<!DOCTYPE html>
+           
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -2120,9 +2277,12 @@ setInterval(nextSlide, 5000);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 30px;
-    background-color: rgba(234, 233, 229, 0.52);
+    background-color: rgba(234, 233, 229, 0.4);
     text-align: center;
     transition: height 0.3s ease;
+          backdrop-filter: blur(5px);
+          font-family: serif;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
         }
         .DeltaTeam-member-photo {
             width: 150px;
@@ -2255,7 +2415,7 @@ setInterval(nextSlide, 5000);
     
     <div class="mem-container">
         <a  href="https://sites.google.com/bu.ac.bd/bupcmems/members-data">
-  <button class="mem-toggle-button">See Members</button>
+  <button class="mem-toggle-button">See General Members</button>
 </a>
 
     </div>
@@ -2265,21 +2425,45 @@ setInterval(nextSlide, 5000);
     <script>
      function toggleNucleusMembers() {
     const section = document.getElementById('nucleus-member-section');
+    const button = document.querySelector('.nucleus-close-button');
+
     if (section.style.display === 'none' || section.style.display === '') {
+        // Show the section
         section.style.display = 'block';
+        section.style.opacity = '1'; // Reset opacity in case it was faded
     } else {
-        section.style.display = 'none';
+        // Add a closing effect to the button
+        button.classList.add('closing-effect');
+
+        // Wait for the animation to complete before hiding the section
+        setTimeout(() => {
+            button.classList.remove('closing-effect');
+            section.style.display = 'none';
+        }, 500); // Match the CSS animation duration
     }
 }
 
+
 function toggleDeltaMembers() {
     const section = document.getElementById('delta-member-section');
+    const button = document.querySelector('.delta-close-button');
+
     if (section.style.display === 'none' || section.style.display === '') {
         section.style.display = 'block';
     } else {
-        section.style.display = 'none';
+        // Add a cool closing effect
+        button.classList.add('closing-effect');
+
+        // Wait for the animation to complete before hiding the section
+        setTimeout(() => {
+            button.classList.remove('closing-effect');
+            section.style.display = 'none';
+        }, 500); // Match the animation duration
     }
 }
+
+
+
 
         
         
@@ -2290,7 +2474,7 @@ function toggleDeltaMembers() {
     <br><br><br>
     <!-- Get in Touch [start from]-->
                 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -2309,7 +2493,7 @@ nav {
 }
 
 nav button {
-    background-color: rgba(68, 68, 68, 0.45);
+    background-color: rgba(91, 91, 91, 0.45);
     border-radius: 10px;
     color: white;
     border: none;
@@ -2320,17 +2504,20 @@ nav button {
     font-family: serif;
     border: 2px solid rgba(119, 119, 119, 0.58);
     box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(3px);
 }
 
 nav button.active {
-    background-color: #FFD700;
-    color: black;
+    background-color: rgba(63, 63, 63, 0.87);
+    color: #FFD700;
+  border: 2px solid #FFD700;
     font-weight: bold;
 }
 
 nav button:hover {
     background-color: rgba(74, 73, 45, 0);
     border: 3px solid #FFD700;
+  color: white;
 }
 
 /* Subcategory Container Styles */
@@ -2345,7 +2532,7 @@ nav button:hover {
     margin-left: 20px;
     background: rgba(140, 140, 140, 0.39);
     border-radius: 15px;
-    border: 1px solid rgba(155, 155, 155, 0.53);
+    border: 1px solid rgba(117, 117, 117, 0.53);
     padding: 20px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -2354,6 +2541,7 @@ nav button:hover {
     transition: opacity 1s ease, transform 1s ease, filter 1s ease;
     position: relative;
     overflow: hidden;
+  backdrop-filter: blur(5px);
 }
 
 #subcategory-container.show {
@@ -2698,7 +2886,7 @@ function addSubcategories(category) {
     const startCounting = () => {
       if (!isCountingStarted) {
         counterNumbers.forEach((counterNumber, index) => {
-          const targetNumber = [70, 9, 11, 2][index];
+          const targetNumber = [90, 9, 11, 2][index];
 
           const updateCounter = () => {
             let currentCount = 0;
@@ -2745,8 +2933,8 @@ function addSubcategories(category) {
   <br>
   <br>
     <footer>
-        <p>&copy; 2024 Barishal University Physics Club. All rights reserved.</p>
-        <p>Follow us on <a href="https://www.facebook.com/buphysicsclub">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p> 
+        <p>&copy; 2025 Barishal University Physics Club.<br> All rights reserved.</p>
+        <p>Follow us on <a href="https://www.facebook.com/buphysicsclub">Facebook</a> | <a href="#">X</a> | <a href="#">Instagram</a></p> 
 	    <p>Developed by <b>Rayhan Miah</b> (+8801881680420) </p><br>
         <img src="https://cool-rayhan.github.io/BUPC/BUPC LOGO.png" style="width: 30%" alt="" />
     </footer>
